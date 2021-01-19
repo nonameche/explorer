@@ -1,0 +1,27 @@
+.alert {
+  position: fixed;
+  display: block;
+  width: 20rem;
+  height: auto;
+  min-height: 4rem;
+  border-radius: $border-radius;
+  padding: $alert-padding-y $alert-padding-x;
+  color: $white;
+}
+.alert-primary {
+  background-color: $primary;
+}
+.alert-success {
+  background-color: $success;
+}
+.alert-danger {
+  background-color: $danger;
+}
+.alert-warning {
+  background-color: $warning;
+}
+.close {
+  position: absolute;
+  top: $alert-padding-y;
+  right: $alert-padding-x;
+}
