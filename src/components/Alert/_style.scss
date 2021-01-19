@@ -1,5 +1,7 @@
 .alert {
   position: fixed;
+  top: 1rem;
+  right: 1rem;
   display: block;
   width: 20rem;
   height: auto;
@@ -24,4 +26,5 @@
   position: absolute;
   top: $alert-padding-y;
   right: $alert-padding-x;
+  cursor: pointer;
 }
