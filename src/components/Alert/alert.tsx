@@ -16,9 +16,9 @@ interface BaseAlertProps {
 }
 
 const Alert: React.FC<BaseAlertProps> = (props) => {
-  const { alertType, children, showClose, title } = props
+  const { alertType, children, className, showClose, title } = props
   const [show, setShow] = useState<boolean>(true)
-  const classes = classNames("alert", {
+  const classes = classNames("alert", className, {
     [`alert-${alertType}`]: alertType,
   })
   return show ? (
