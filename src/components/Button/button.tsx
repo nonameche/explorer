@@ -1,17 +1,14 @@
 import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from "react"
 import classNames from "classnames"
 
-export type ButtonSize = "lg" | "sm"
-export type ButtonType = "primary" | "default" | "danger" | "link"
-
 interface BaseButtonProps {
   className?: string
   /**设置 Button 的禁用 */
   disabled?: boolean
   /**设置 Button 的尺寸 */
-  size?: ButtonSize
+  size?: "lg" | "sm"
   /**设置 Button 的类型 */
-  btnType?: ButtonType
+  btnType?: "primary" | "default" | "danger" | "link"
   children: React.ReactNode
   href?: string
 }
