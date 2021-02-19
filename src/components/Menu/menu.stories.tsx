@@ -6,7 +6,7 @@ import MenuItem from "./menuItem"
 import SubMenu from "./subMenu"
 
 export default {
-  title: "Example/Menu",
+  title: "导航/Menu 导航菜单",
   component: Menu,
   // argTypes: {
   //   backgroundColor: { control: "color" },
