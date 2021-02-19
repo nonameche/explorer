@@ -48,11 +48,6 @@
     "build-storybook": "build-storybook",
     "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run test:nowatch && npm run lint"
-    }
-  },
   "eslintConfig": {
     "extends": "react-app"
   },
