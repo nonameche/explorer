@@ -4,10 +4,11 @@ interface BaseAlertProps {
   className?: string
   /**设置 Alert 类型 */
   alertType?: "primary" | "success" | "danger" | "warning"
+  /**设置 Alert 内容 */
   children?: React.ReactNode
   /**是否显示关闭按钮 */
   showClose?: boolean
-  /**设置 Alert 标题 */
+  /**设置 Alert 标题(选填) */
   title?: string
 }
 /**
@@ -19,7 +20,7 @@ interface BaseAlertProps {
  * import { Alert } from 'explorer'
  * ~~~
  */
-const Alert: React.FC<BaseAlertProps> = (props) => {
+export const Alert: React.FC<BaseAlertProps> = (props) => {
   const { alertType, children, className, showClose, title } = props
   const [show, setShow] = useState<boolean>(true)
   const classes = classNames("alert", className, {
@@ -44,5 +45,6 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
 }
 Alert.defaultProps = {
   alertType: "primary",
+  showClose: true,
 }
 export default Alert
