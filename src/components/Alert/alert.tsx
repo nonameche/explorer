@@ -1,21 +1,26 @@
 import React, { useState } from "react"
 import classNames from "classnames"
-
-export enum AlertType {
-  Primary = "primary",
-  Success = "success",
-  Danger = "danger",
-  Warning = "warning",
-}
 interface BaseAlertProps {
   className?: string
-  alertType?: string
+  /**设置 Alert 类型 */
+  alertType?: "primary" | "success" | "danger" | "warning"
+  /**设置 Alert 内容 */
   children?: React.ReactNode
+  /**是否显示关闭按钮 */
   showClose?: boolean
+  /**设置 Alert 标题(选填) */
   title?: string
 }
-
-const Alert: React.FC<BaseAlertProps> = (props) => {
+/**
+ * 用于页面中展示重要的提示信息。 点击右侧的叉提示自动消失
+ *
+ * ### 引用方法
+ *
+ * ~~~js
+ * import { Alert } from 'explorer'
+ * ~~~
+ */
+export const Alert: React.FC<BaseAlertProps> = (props) => {
   const { alertType, children, className, showClose, title } = props
   const [show, setShow] = useState<boolean>(true)
   const classes = classNames("alert", className, {
@@ -39,6 +44,7 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
   ) : null
 }
 Alert.defaultProps = {
-  alertType: AlertType.Primary,
+  alertType: "primary",
+  showClose: true,
 }
 export default Alert
