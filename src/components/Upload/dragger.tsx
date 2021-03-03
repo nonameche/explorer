@@ -1,15 +1,15 @@
-import React, { FC, useState, DragEvent } from 'react'
-import classNames from 'classnames'
+import React, { FC, useState, DragEvent } from "react"
+import classNames from "classnames"
 
 interface DraggerProps {
-  onFile: (files: FileList) => void;
+  onFile: (files: FileList) => void
 }
 
 export const Dragger: FC<DraggerProps> = (props) => {
   const { onFile, children } = props
-  const [ dragOver, setDragOver ] = useState(false)
-  const klass = classNames('viking-uploader-dragger', {
-    'is-dragover': dragOver
+  const [dragOver, setDragOver] = useState(false)
+  const klass = classNames("explorer-uploader-dragger", {
+    "is-dragover": dragOver,
   })
   const handleDrop = (e: DragEvent<HTMLElement>) => {
     e.preventDefault()
@@ -21,10 +21,14 @@ export const Dragger: FC<DraggerProps> = (props) => {
     setDragOver(over)
   }
   return (
-    <div 
+    <div
       className={klass}
-      onDragOver={e => { handleDrag(e, true)}}
-      onDragLeave={e => { handleDrag(e, false)}}
+      onDragOver={(e) => {
+        handleDrag(e, true)
+      }}
+      onDragLeave={(e) => {
+        handleDrag(e, false)
+      }}
       onDrop={handleDrop}
     >
       {children}
@@ -32,4 +36,4 @@ export const Dragger: FC<DraggerProps> = (props) => {
   )
 }
 
-export default Dragger;
+export default Dragger

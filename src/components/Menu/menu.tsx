@@ -42,8 +42,9 @@ export const Menu: FC<MenuProps> = (props) => {
     onSelect,
     defaultOpenSubMenus,
   } = props
+  console.log(props)
   const [currentActive, setActive] = useState(defaultIndex)
-  const classes = classNames("viking-menu", className, {
+  const classes = classNames("explorer-menu", className, {
     "menu-vertical": mode === "vertical",
     "menu-horizontal": mode !== "vertical",
   })
@@ -87,7 +88,6 @@ export const Menu: FC<MenuProps> = (props) => {
 Menu.defaultProps = {
   defaultIndex: "0",
   mode: "horizontal",
-  defaultOpenSubMenus: [],
 }
 
 export default Menu
