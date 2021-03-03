@@ -28,6 +28,7 @@
     "axios": "^0.19.1",
     "classnames": "^2.2.6",
     "node-loader": "^1.0.2",
+    "react-scripts": "^3.2.0",
     "react-transition-group": "^4.3.0"
   },
   "peerDependencies": {

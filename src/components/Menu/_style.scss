@@ -1,4 +1,4 @@
-.viking-menu {
+.explorer-menu {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
@@ -6,11 +6,12 @@
   list-style: none;
   border-bottom: $menu-border-width solid $menu-border-color;
   box-shadow: $menu-box-shadow;
-  >.menu-item {
+  > .menu-item {
     padding: $menu-item-padding-y $menu-item-padding-x;
     cursor: pointer;
     transition: $menu-transition;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       text-decoration: none;
     }
     &.is-disabled {
@@ -18,9 +19,11 @@
       pointer-events: none;
       cursor: default;
     }
-    &.is-active, &:hover {
+    &.is-active,
+    &:hover {
       color: $menu-item-active-color;
-      border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
+      border-bottom: $menu-item-active-border-width solid
+        $menu-item-active-color;
     }
   }
   .submenu-item {
@@ -30,7 +33,7 @@
       align-items: center;
     }
     .arrow-icon {
-      transition: transform .25s ease-in-out;
+      transition: transform 0.25s ease-in-out;
       margin-left: 3px;
     }
     &:hover {
@@ -49,9 +52,9 @@
       transform: rotate(180deg) !important;
     }
   }
-  .viking-submenu {
+  .explorer-submenu {
     //display: none;
-    list-style:none;
+    list-style: none;
     padding-left: 0;
     white-space: nowrap;
     //transition: $menu-transition;
@@ -60,20 +63,21 @@
       cursor: pointer;
       transition: $menu-transition;
       color: $body-color;
-      &.is-active, &:hover {
+      &.is-active,
+      &:hover {
         color: $menu-item-active-color !important;
       }
     }
   }
-  .viking-submenu.menu-opened {
+  .explorer-submenu.menu-opened {
     //display: block;
   }
 }
 .menu-horizontal {
-  >.menu-item {
+  > .menu-item {
     border-bottom: $menu-item-active-border-width solid transparent;
   }
-  .viking-submenu {
+  .explorer-submenu {
     position: absolute;
     background: $white;
     z-index: 100;
@@ -88,9 +92,10 @@
   border-bottom: 0px;
   margin: 10px 20px;
   border-right: $menu-border-width solid $menu-border-color;
-  >.menu-item {
+  > .menu-item {
     border-left: $menu-item-active-border-width solid transparent;
-    &.is-active, &:hover {
+    &.is-active,
+    &:hover {
       border-bottom: 0px;
       border-left: $menu-item-active-border-width solid $menu-item-active-color;
     }

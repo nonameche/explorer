@@ -1,13 +1,13 @@
-.viking-progress-bar {
+.explorer-progress-bar {
   width: 100%;
   box-sizing: border-box;
-  .viking-progress-bar-outer {
+  .explorer-progress-bar-outer {
     border-radius: $progress-border-radius;
     background-color: $progress-bg;
     overflow: hidden;
     position: relative;
   }
-  .viking-progress-bar-inner {
+  .explorer-progress-bar-inner {
     position: absolute;
     left: 0;
     top: 0;
@@ -21,7 +21,7 @@
     .inner-text {
       color: $progress-bar-color;
       font-size: $progress-font-size;
-      margin: 0 5px;  
+      margin: 0 5px;
     }
   }
   @each $key, $val in $theme-colors {
