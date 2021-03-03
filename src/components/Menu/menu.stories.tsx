@@ -12,12 +12,12 @@ export default {
   args: {
     defaultIndex: "0",
     mode: "horizontal",
-    defaultOpenSubMenus: ["2"],
+    defaultOpenSubMenus: [2],
   },
 } as Meta
 
 const Template: Story = (args) => (
-  <Menu defaultOpenSubMenus={["2"]} onSelect={() => {}} mode="horizontal">
+  <Menu {...args}>
     <Menu.Item>选项一</Menu.Item>
     <Menu.Item disabled>选项二</Menu.Item>
     <Menu.SubMenu title="下拉选项">
