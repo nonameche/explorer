@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest # 使用ubuntu系统镜像运行自动化脚本(温馨提示：和你所使用的操作系统及服务器系统无关，我本地用的windows10,云服务器用的centos)
     strategy:
       matrix:
-        node-version: [12.x] # 配置所需node版本
+        node-version: [14.x] # 配置所需node版本
     steps: # 自动化步骤
       - uses: actions/checkout@v2 # 第一步，检出仓库副本
 
@@ -32,7 +32,7 @@ jobs:
         run: npm install
 
       - name: Build # 第三步，打包代码
-        run: build-storybook
+        run: npm run build-storybook
 
       - name: Deploy to Server # 第四步，rsync推送文件
         uses: AEnterprise/rsync-deploy@v1.0 # 使用别人包装好的步骤镜像
@@ -44,6 +44,7 @@ jobs:
           SERVER_IP: ${{ secrets.SSH_HOST }} # 引用配置，服务器的host名（IP或者域名domain.com）
           USERNAME: ${{ secrets.SSH_USERNAME }} # 引用配置，服务器登录名
           SERVER_DESTINATION: /www/wwwroot/explorer/ # 部署到目标文件夹
+
 
     # - name: Restart server   # 第五步，重启服务
     #   uses: appleboy/ssh-action@master
